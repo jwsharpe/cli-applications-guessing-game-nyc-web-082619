@@ -1,14 +1,23 @@
 def run_guessing_game
-  computer = 1 + rand(6)
-  puts "I'm guessing a number between 1-6, what do you think it is?"
-  input = gets.chomp.to_i
+  while(true) do
+    computer = 1 + rand(6)
+    puts "I'm guessing a number between 1-6, what do you think it is?"
+    
+    
+    
+    input = gets.chomp
+    
+    if(input == 'exit') return
 
-  if(computer == input)
-    puts "You guessed the correct number!"
-  end
 
-  if(computer != input)
-    puts "Sorry! The computer guessed #{computer}."
+
+    if(computer == input)
+      puts "You guessed the correct number!"
+    end
+
+    if(computer != input)
+      puts "Sorry! The computer guessed #{computer}."
+    end
   end
 end
 
